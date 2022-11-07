@@ -1,40 +1,69 @@
-import { PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient()
 
 async function seedCountries(){
-    await prisma.country.upsert({
+    const argentina = await prisma.country.upsert({
         where: { name: 'Argentina' },
         update: {},
         create: {
           name: 'Argentina'
         },
       })
-    await prisma.country.upsert({
+    const brazil = await prisma.country.upsert({
         where: { name: 'Brazil' },
         update: {},
         create: {
           name: 'Brazil'
         },
       })
-      await prisma.country.upsert({
+    const irlanda = await prisma.country.upsert({
           where: { name: 'Irlanda' },
           update: {},
           create: {
               name: 'Irlanda'
             },
         })
-        await prisma.country.upsert({
-          where: { name: 'Tailândia' },
+      const tailand =   await prisma.country.upsert({
+          where: { name: 'Tailand' },
           update: {},
           create: {
-            name: 'Tailândia'
+            name: 'Tailand'
           },
         })
+        return {
+          argentina,
+          brazil,
+          irlanda,
+          tailand
+        }
 }
 
-async function seedCities(){
+async function seedCities(countries:{[key:string]:{id: string}}){
+  const salvador =   await prisma.city.upsert({
+    where: { name: 'Salvador' },
+    update: {},
+    create: {
+      name: 'Salvador',
+      photoUrl:'a',
+      countryId: countries.brazil.id
+    },
+  })
 
+  const sp =   await prisma.city.upsert({
+    where: { name: 'São Paulo' },
+    update: {},
+    create: {
+      name: 'São Paulo',
+      photoUrl:'a',
+      countryId: countries.brazil.id
+    },
+  })
+
+  return {
+    salvador,
+    sp
+  }
 }
 
 async function seedUsers(){
@@ -43,8 +72,8 @@ async function seedUsers(){
 
 
 async function main(){
-    await seedCountries();
-    await seedCities();
+    const countries = await seedCountries();
+    const cities = await seedCities(countries);
     await seedUsers();
 }
 
