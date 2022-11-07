@@ -1,2 +1,13 @@
-# MassEmailing
-Serveless Mass Emailing application using NodeJS, AWS
+# WooNomadWoo
+
+## CC Final Year Project
+
+### What is WooNomadWoo
+
+### Projects
+server:
+web:
+mobile:
+### Setup
+
+### run

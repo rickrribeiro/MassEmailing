@@ -1,0 +1,115 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Country {
+  id     String @id @default(uuid())
+  name   String @unique
+  cities City[]
+}
+
+model City {
+  id        String @id @default(uuid())
+  name      String @unique
+  photoUrl  String
+  countryId String
+
+  country Country @relation(fields: [countryId], references: [id])
+
+  reviews         Review[]
+  recommendations Recommendation[]
+  users           User[]
+}
+
+model Review {
+  id              String @id @default(uuid())
+  cityId          String
+  userId          String
+  rentPrice       Int
+  nature          Int
+  tinder          Int
+  internetQuality Int
+
+  createdAt DateTime @default(now())
+
+  city City @relation(fields: [cityId], references: [id])
+  user User @relation(fields: [userId], references: [id])
+
+  comments Comment[]
+}
+
+model CommentType {
+  id   String @id @default(uuid())
+  name String
+
+  comments Comment[]
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  typeId    String
+  userId    String
+  comment   String
+  reviewId  String
+  createdAt DateTime @default(now())
+
+  review Review      @relation(fields: [reviewId], references: [id])
+  type   CommentType @relation(fields: [typeId], references: [id])
+  user   User        @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id              String  @id @default(uuid())
+  name            String
+  nacionality     String
+  cityId          String
+  isAdmin         Boolean
+  email           String  @unique
+  username        String  @unique
+  password        String
+  bio             String
+  profilePhotoUrl String
+
+  currentLocation City             @relation(fields: [cityId], references: [id])
+  comments        Comment[]
+  reviews         Review[]
+  recommendations Recommendation[]
+  rates           Rate[]
+}
+
+model Recommendation {
+  id          String @id @default(uuid())
+  userId      String
+  cityId      String
+  description String
+  contact     String
+
+  createdAt DateTime @default(now())
+
+  user  User   @relation(fields: [userId], references: [id])
+  city  City   @relation(fields: [cityId], references: [id])
+  rates Rate[]
+}
+
+model Rate {
+  id               String @id @default(uuid())
+  userId           String
+  recommendationId String
+  value            Int
+
+  createdAt DateTime @default(now())
+
+  user           User           @relation(fields: [userId], references: [id])
+  recommendation Recommendation @relation(fields: [recommendationId], references: [id])
+}
+
+// npx prisma migrate dev
+// npx prisma studio
