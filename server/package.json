@@ -10,7 +10,8 @@
     "dev": "tsnd --exit-child src/server.ts",
     "prisma-generate": "npx prisma generate",
     "prisma-seed": "tsnd prisma/seed.ts",
-    "prisma-migrate": "npx prisma migrate dev"
+    "prisma-migrate": "npx prisma migrate dev",
+    "prisma-studio": "npx prisma studio"
   },
   "keywords": [],
   "author": "",

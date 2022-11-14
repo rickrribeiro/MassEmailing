@@ -67,6 +67,9 @@ router.get('/getByCity/:id', async (req,res) => {
     })
     return res.json(user)
 });
-
-
+// BOTAR OS DELETES. NO DELETE DE USER DELETAR TUDO DELE(logico). LEMBRAR DE COMMENT, ETC. Botar update também
+// BOTAR LOGS
+// bloquear users banidos
+// adicionar deleção logica
+// Padronizar rotas
 module.exports = router;
