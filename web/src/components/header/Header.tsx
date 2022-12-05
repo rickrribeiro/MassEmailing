@@ -9,9 +9,11 @@ import Logo from "../../assets/logo.png";
 function Header() {
   return (
     <div className="header">
-      <Link to="/">
-        <img className="header__icon" src={Logo} alt="" />
-      </Link>
+      <div className="header__left">
+        <Link to="/">
+          <img className="header__icon" src={Logo} alt="" />
+        </Link>
+      </div>
 
       <div className="header__center">
         <input type="text" />

@@ -9,9 +9,17 @@
     width: 100%;
 }
 
-.header__icon {
-    object-fit: contain;
+.header__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
     height: 100px;
+    margin-left: 20px;
+}
+
+.header__icon {
+    max-width: 10vw;
     margin-left: 20px;
 }
 
