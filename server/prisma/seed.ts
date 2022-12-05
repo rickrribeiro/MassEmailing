@@ -29,7 +29,7 @@ async function seedCountries(){
           update: {},
           create: {
             name: 'Tailand'
-          },
+           },
         })
         return {
           argentina,

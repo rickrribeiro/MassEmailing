@@ -1,0 +1,3 @@
+adicionar empresa ao usuario
+colocar lat long nos users p dar update em tempo real pelo celular e marcar no mapa tanto nomades no geral como por empresa
+flag location enabled: everyone, company, false

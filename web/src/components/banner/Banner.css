@@ -1,0 +1,49 @@
+.banner {
+    background: url("https://cdn-aedlj.nitrocdn.com/TXGnHSzgVtmHZyFcCTmqtXBgbiQqZwCm/assets/static/optimized/rev-e77a2e4/wp-content/uploads/2021/10/thai-elite-for-digital-nomads.jpg") center center;/* center center vertically and horizontally*/
+    height: 50vh;
+    position: relative;
+}
+
+.banner__info {
+    background-color: black;
+    color: white;
+    bottom: 0px;
+    top: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.banner__infotext>button {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    /* text-transform: inherit  por que material UI sempre deixa o texto uppercase*/
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.banner__search {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__searchButton { /* .banner__search > button { */
+    background-color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    color: #ff7779 !important;
+}
+
+.banner__infotext > button:hover {
+    background-color: white;
+    color: #ff7779;
+}
+
+.banner__infotext > h5 {
+    margin-top: 10px;
+}

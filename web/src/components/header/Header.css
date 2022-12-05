@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* deixa fixado no topo qnd da scroll */
+    top: 0;
+    background-color: white;
+    z-index: 100; /* p ficar sempre na frente */
+    width: 100%;
+}
+
+.header__icon {
+    object-fit: contain;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.header__center {
+    display: flex;
+    flex: 1; /* bota p pegar o tamanho todo restante */
+    align-items: center;
+    max-width: fit-content;
+    padding: 10px;
+    /* height: 30px;    DESCOMENTAR SE BUGAR O TAMANHO, COMENTEI P DESBUGAR NO FIREFOX */
+    border: 1px solid lightgray;
+    border-radius: 999px;
+}
+
+.header__center > input {
+    border: 0;
+    outline-width: 0; /* remove o contorno quando clica */
+
+}
+
+input:focus {outline:none!important;}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
+    margin-right: 80px;
+}
