@@ -1,7 +1,13 @@
 import "./styles/main.css";
 import React, {useState, useEffect} from 'react'
-import Search from './pages/search/SearchPage'
-import Home from './pages/home/HomePage'
+import {
+  HomePage,
+  SearchPage,
+  RegisterPage,
+  LoginPage,
+  ErrorPage
+} from './pages'
+
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import axios from "axios";
@@ -33,8 +39,13 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route element={<Search />} path="/search" />
-          <Route element={<Home />} path="/" />
+          <Route element={<HomePage />} path="/" />
+          <Route element={<SearchPage />} path="/search" />
+          <Route element={<RegisterPage />} path="/register" />
+          <Route element={<LoginPage />} path="/login" />
+
+          {/* 404 */}
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </ Router>
