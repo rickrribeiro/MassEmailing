@@ -42,3 +42,18 @@
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
+.card__info>button {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    /* text-transform: inherit  por que material UI sempre deixa o texto uppercase*/
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+
+.card__info > button:hover {
+    background-color: white;
+    color: #ff7779;
+}
