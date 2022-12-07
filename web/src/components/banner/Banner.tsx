@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 import './Banner.css'
 import Search from '../search/Search'
 
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Banner() {
-    let navigate = useNavigate(); 
+    let navigate = useHistory(); 
     
     const [showSearch, setShowSearch] = useState(false);
 
@@ -31,7 +31,7 @@ function Banner() {
                 <h5>
                     With WooNomadWoo you won't have "perrengues"  as a digital nomad.
                 </h5>
-                <Button onClick={() =>navigate('/search')} variant='outlined'>Explore cities 🌍</Button>
+                <Button onClick={() =>history.push('/search')} variant='outlined'>Explore cities 🌍</Button>
                 </div>
             </div>
         </div>

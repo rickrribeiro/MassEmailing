@@ -84,4 +84,13 @@ function Search() {
     )
 }
 
-export default Search
+
+import { connect } from "react-redux";
+
+const mapStateToProps = (state) => {
+	return {
+		user: state.userState.user,
+	};
+};
+
+export default connect(mapStateToProps)(Search);

@@ -144,4 +144,13 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+
+import { connect } from "react-redux";
+
+const mapStateToProps = (state) => {
+	return {
+		user: state.userState.user,
+	};
+};
+
+export default connect(mapStateToProps)(RegisterPage);

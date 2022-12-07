@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css'
 import { Button } from '@material-ui/core'
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 interface RecommendationProps {
     id: string;
@@ -16,7 +16,7 @@ interface RecommendationProps {
 
 function Card(props: RecommendationProps) {
 
-    let navigate = useNavigate(); 
+    let navigate = useHistory(); 
 
     return (
         <div className='card'>
@@ -25,7 +25,7 @@ function Card(props: RecommendationProps) {
                 <h2>{props.title}</h2>
                 <h4>{props.description}</h4>
                
-                <Button onClick={() =>navigate(`/city/${props.city.name}`)} variant='outlined'>Explore city</Button>
+                <Button onClick={() =>navigate.push(`/city/${props.city.name}`)} variant='outlined'>Explore city</Button>
   
             </div>
         </div>

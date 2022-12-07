@@ -3,9 +3,10 @@ import "./AuthPages.css";
 import axios from "axios";
 import { Input } from "../../components/forms/input";
 import { MapPin } from "phosphor-react";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { signInAPI } from "../../action";
 import { connect } from "react-redux";
+import { Redirect } from "react-router";
 
 interface LoginProps {
   user: Object,
@@ -15,8 +16,8 @@ interface LoginProps {
 function LoginPage(props) {
   // console.log("Props")
   // console.log(props)
-  let navigate = useNavigate();
-  if (props.user) return navigate("/");
+  // let navigate = useHistory();
+  // if (props.user) return navigate.push("/");
 
   async function handleLogin(event: FormEvent) {
     event.preventDefault();
@@ -44,9 +45,20 @@ function LoginPage(props) {
     }
   }
 
+  // const [auth, setAuth] = useState<Boolean>(false)
+  // useEffect(() => {
+  //   if(auth){
+
+  //     console.log("AAAAAAAAAAAAA")
+  //     props.signIn()
+  //   }
+  // }, [auth]);
+
+
   // <form className="mt-8 flex flex-col gap-4" onSubmit={handleCreateAd}>
   return (
     <div className="authForm">
+      {props.user && <Redirect to="/" />}
       <section className="mt-8 flex flex-col gap-4" id="registerForm">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -59,9 +71,8 @@ function LoginPage(props) {
                   alt="Sample photo"
                 />
                 <div className="card-body p-4 p-md-5">
-                  <form
+                  <div
                     className="mt-8 flex flex-col gap-4"
-                    onSubmit={handleLogin}
                   >
                     <h1 className="text-3xl font-bold">Login</h1>
 
@@ -117,7 +128,7 @@ function LoginPage(props) {
                         </div>
                       </div>
                     </footer>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>

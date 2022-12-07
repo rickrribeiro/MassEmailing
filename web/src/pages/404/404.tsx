@@ -40,5 +40,14 @@ function ErrorPage() {
   );
 }
 
-export default ErrorPage;
+
+import { connect } from "react-redux";
+
+const mapStateToProps = (state) => {
+	return {
+		user: state.userState.user,
+	};
+};
+
+export default connect(mapStateToProps)(ErrorPage);
 

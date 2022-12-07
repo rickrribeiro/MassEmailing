@@ -8,12 +8,14 @@ export const initialState = {
 function articleReducer(state = initialState, action) {
 	switch (action.type) {
 		case GET_ARTICLES:
+			console.log("ENTROU2")
 			return {
 				...state,
 				articles: action.payload,
 				ids: action.id,
 			};
 		case SET_LOADING_STATUS:
+			console.log("ENTROU3")
 			return {
 				...state,
 				loading: action.status,

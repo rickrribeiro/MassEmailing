@@ -2,7 +2,7 @@ import db, { auth, provider, storage } from "../firebase";
 import { SET_LOADING_STATUS, SET_USER, GET_ARTICLES } from "./actionType";
 import { collection, doc, setDoc, addDoc } from "firebase/firestore"; 
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
+import { useDispatch } from 'react-redux';
 
 export function setUser(payload) {
 
@@ -47,14 +47,9 @@ export function signInAPI() {
 			const credential = GoogleAuthProvider.credentialFromResult(result);
 			const token = credential.accessToken;
 			console.log(result.user)
-			console.log(dispatch)
 			dispatch(setUser(result.user));
 		}).catch((error) => {
 			console.log(error.message)
-			const errorCode = error.code;
-			const errorMessage = error.message;
-			const email = error.customData.email;
-			const credential = GoogleAuthProvider.credentialFromError(error);
 			alert(error.message);
 		});
 

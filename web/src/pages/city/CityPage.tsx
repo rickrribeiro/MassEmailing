@@ -5,15 +5,16 @@ import './CityPage.css'
 import Left from "../../components/city/left/Left"
 import Main from "../../components/city/main/Main";
 import Right from "../../components/city/right/Right";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 interface CityPageProps {
   user: Object
 }
 
 
-function Home(props: CityPageProps) {
-  let navigate = useNavigate(); 
+// function Home(props: CityPageProps) {
+	function Home(props) {
+  let navigate = useHistory(); 
   
   // if(!props.user) return navigate('/login'); - > p quando tiver login, ver se n autentica direto no router
 
@@ -40,7 +41,7 @@ function Home(props: CityPageProps) {
 
 const mapStateToProps = (state) => {
 	return {
-		user: state.userState.user,
+		user: state.userState?.user,
 	};
 };
 

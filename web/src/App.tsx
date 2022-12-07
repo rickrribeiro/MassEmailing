@@ -14,31 +14,56 @@ import {
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import Store from "./store";
 
 function App() {
 
   return (
-    <Provider store={Store}>
-      <div className="app">
+
+        <div className="App">
         <Router>
-          <Header />
-          <Routes>
-            <Route element={<HomePage />} path="/" />
-            <Route element={<SearchPage />} path="/search" />
-            <Route element={<RegisterPage />} path="/register" />
-            <Route element={<LoginPage />} path="/login" />
-            <Route element={<CityPage />} path="/city/:name" />
-            {/* 404 */}
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-          <Footer />
+             <Header />
+          <Switch>
+            <Route exact path="/login">
+              <LoginPage />
+            </Route>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/search">
+              <SearchPage />
+            </Route>
+            <Route exact path="/register">
+              <RegisterPage />
+            </Route>
+            <Route exact path="/city/:name">
+              <CityPage />
+            </Route>
+            <Route  path="*">
+              <ErrorPage />
+            </Route>
+          </Switch>
+            <Footer />
         </Router>
+        
+        
+       
       </div>
-    </Provider>
+ 
   );
 }
 
-export default App;
+import { connect } from "react-redux";
+const mapStateToProps = (state) => {
+	return {
+    user: state.userState?.user,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+	getUserAuth: () => dispatch(getUserAuth()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
