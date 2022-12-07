@@ -1,8 +1,11 @@
 import db, { auth, provider, storage } from "../firebase";
 import { SET_LOADING_STATUS, SET_USER, GET_ARTICLES } from "./actionType";
 import { collection, doc, setDoc, addDoc } from "firebase/firestore"; 
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 
 export function setUser(payload) {
+
 	return {
 		type: SET_USER,
 		user: payload,
@@ -36,9 +39,25 @@ export function getUserAuth() {
 
 export function signInAPI() {
 	return (dispatch) => {
-		auth.signInWithPopup(provider)
-			.then((payload) => dispatch(setUser(payload.user)))
-			.catch((err) => alert(err.message));
+
+		console.log("dispatch")
+		signInWithPopup(auth, provider)
+		.then((result) => {
+		
+			const credential = GoogleAuthProvider.credentialFromResult(result);
+			const token = credential.accessToken;
+			console.log(result.user)
+			console.log(dispatch)
+			dispatch(setUser(result.user));
+		}).catch((error) => {
+			console.log(error.message)
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			const email = error.customData.email;
+			const credential = GoogleAuthProvider.credentialFromError(error);
+			alert(error.message);
+		});
+
 	};
 }
 

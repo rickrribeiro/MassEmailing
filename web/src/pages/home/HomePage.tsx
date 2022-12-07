@@ -18,10 +18,10 @@ function HomePage() {
   const [games, setGames] = useState<Game[]>([])
 
   useEffect(()=>{ //exec a func  qnd a var no array mudar
-    axios('http://192.168.0.31:3000/games')
-    .then(response => {
-      setGames(response.data)
-    })
+    // axios('http://192.168.0.31:3000/games')
+    // .then(response => {
+    //   setGames(response.data)
+    // })
   },[])// se deixar vazio executa uma unica vez durante todo o fluxo
 
 

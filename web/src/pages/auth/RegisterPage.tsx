@@ -94,7 +94,7 @@ function RegisterPage() {
                       />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="font-semibold" htmlFor="name">Password "TODO: ESCONDER A SENHA"</label>
+                      <label className="font-semibold" htmlFor="name">Password</label>
                       <Input
                         name="name"
                         id="name"

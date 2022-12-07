@@ -18,9 +18,9 @@ export function CreateAdModal() {
   const [games, setGames] = useState<Game[]>([]);
   useEffect(() => {
     //exec a func  qnd a var no array mudar
-    axios("http://192.168.0.31:3000/games").then((response) => {
-      setGames(response.data);
-    });
+    // axios("http://192.168.0.31:3000/games").then((response) => {
+    //   setGames(response.data);
+    // });
   }, []); // se deixar vazio executa uma unica vez durante todo o fluxo
 
   async function handleCreateAd(event: FormEvent) {
@@ -34,18 +34,18 @@ export function CreateAdModal() {
     }
 
     try {
-      const response = await axios.post(
-        `http://localhost:3000/games/${data.game}/ads`,
-        {
-          name: data.name,
-          yearsPlaying: Number(data.yearsPlaying),
-          discord: data.discord,
-          weekDays: weekDays.map(Number),
-          hourStart: data.hourStart,
-          hourEnd: data.hourEnd,
-          useVoiceChannel: useVoiceChannel,
-        }
-      );
+      // const response = await axios.post(
+      //   `http://localhost:3000/games/${data.game}/ads`,
+      //   {
+      //     name: data.name,
+      //     yearsPlaying: Number(data.yearsPlaying),
+      //     discord: data.discord,
+      //     weekDays: weekDays.map(Number),
+      //     hourStart: data.hourStart,
+      //     hourEnd: data.hourEnd,
+      //     useVoiceChannel: useVoiceChannel,
+      //   }
+      // );
 
       alert("Anúncio criado com sucesso!");
     } catch (err) {
