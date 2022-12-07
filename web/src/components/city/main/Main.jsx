@@ -235,10 +235,10 @@ function Main(props) {
 	let articles = [
 		{
 			actor: {
-				title: "Neymar",
-				description: "Jogador @ BR",
+				title: "WooYoungWoo",
+				description: "Programadora amante de baleias",
 				date: "06/12/2022",
-				image:"https://images.ctfassets.net/3mv54pzvptwz/5eTv6hTyA1pqkFClYRn0qt/be626a573cbf1ee7e421b73f87ed6851/20221205_foto_GETTY_neymar_jr_jogo_brasil_x_coreia_copa_do_mundo__209_.jpg"
+				image:"https://i0.wp.com/asianbreak.com.br/wp-content/uploads/2022/08/extraordinary-attorney.jpg?fit=1200%2C676&ssl=1"
 			},
 			comments: 10,
 			description: "Contato para turismo em bali: João Turismo",
@@ -250,10 +250,10 @@ function Main(props) {
 			},
 		},{
 			actor: {
-				title: "Neymar",
+				title: "WooYoungWoo",
 				description: "Jogador @ BR",
 				date: "06/12/2022",
-				image:"https://images.ctfassets.net/3mv54pzvptwz/5eTv6hTyA1pqkFClYRn0qt/be626a573cbf1ee7e421b73f87ed6851/20221205_foto_GETTY_neymar_jr_jogo_brasil_x_coreia_copa_do_mundo__209_.jpg"
+				image:"https://i0.wp.com/asianbreak.com.br/wp-content/uploads/2022/08/extraordinary-attorney.jpg?fit=1200%2C676&ssl=1"
 			},
 			comments: 10,
 			description: "Contato do melhor coworking de bali",
@@ -268,10 +268,10 @@ function Main(props) {
 		
 		{
 			actor: {
-				title: "Neymar",
+				title: "WooYoungWoo",
 				description: "Jogador @ BR",
 				date: "06/12/2022",
-				image:"https://images.ctfassets.net/3mv54pzvptwz/5eTv6hTyA1pqkFClYRn0qt/be626a573cbf1ee7e421b73f87ed6851/20221205_foto_GETTY_neymar_jr_jogo_brasil_x_coreia_copa_do_mundo__209_.jpg"
+				image:"https://i0.wp.com/asianbreak.com.br/wp-content/uploads/2022/08/extraordinary-attorney.jpg?fit=1200%2C676&ssl=1"
 			},
 			comments: 10,
 			description: "Contato para aluguel de motos em bali",

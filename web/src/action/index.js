@@ -165,8 +165,8 @@ export function getArticlesAPI() {
 
 export function getArticlesAPI2() {
   console.log("GETETETETETETE3");
-  dispatch(setLoading(true));
   return (dispatch) => {
+	  dispatch(setLoading(true));
     let payload;
     let id;
     console.log("11111111");
