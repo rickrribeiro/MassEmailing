@@ -1,5 +1,6 @@
-import db, { auth, provider, storage } from "../controller";
+import db, { auth, provider, storage } from "../firebase";
 import { SET_LOADING_STATUS, SET_USER, GET_ARTICLES } from "./actionType";
+import { collection, doc, setDoc, addDoc } from "firebase/firestore"; 
 
 export function setUser(payload) {
 	return {
@@ -50,6 +51,7 @@ export function signOutAPI() {
 }
 
 export function postArticleAPI(payload) {
+	console.log(payload)
 	return (dispatch) => {
 		if (payload.image !== "") {
 			dispatch(setLoading(true));
@@ -62,12 +64,13 @@ export function postArticleAPI(payload) {
 				(err) => alert(err),
 				async () => {
 					const downloadURL = await upload.snapshot.ref.getDownloadURL();
-					db.collection("articles").add({
+					addDoc(collection(db,"articles"),{
 						actor: {
-							description: payload.user.email,
-							title: payload.user.displayName,
-							date: payload.timestamp,
-							image: payload.user.photoURL,
+							// TODO: PEGAR USER ID DPS QUE TIVER LOGANDO
+							id: 'id',//payload.user.id,
+							title:'' ,//payload.user.displayName,
+							date: '',//payload.timestamp,
+							image:'' ,//payload.user.photoURL,
 						},
 						video: payload.video,
 						sharedImg: downloadURL,
@@ -83,12 +86,13 @@ export function postArticleAPI(payload) {
 			);
 		} else if (payload.video) {
 			dispatch(setLoading(true));
-			db.collection("articles").add({
+			addDoc(collection(db,"articles"),{
 				actor: {
-					description: payload.user.email,
-					title: payload.user.displayName,
-					date: payload.timestamp,
-					image: payload.user.photoURL,
+					// TODO: PEGAR USER ID DPS QUE TIVER LOGANDO
+					id: 'id',//payload.user.id,
+					title:'' ,//payload.user.displayName,
+					date: '',//payload.timestamp,
+					image:'' ,//payload.user.photoURL,
 				},
 				video: payload.video,
 				sharedImg: "",
@@ -102,12 +106,13 @@ export function postArticleAPI(payload) {
 			dispatch(setLoading(false));
 		} else if (payload.image === "" && payload.video === "") {
 			dispatch(setLoading(true));
-			db.collection("articles").add({
+			addDoc(collection(db,"articles"), {
 				actor: {
-					description: payload.user.email,
-					title: payload.user.displayName,
-					date: payload.timestamp,
-					image: payload.user.photoURL,
+					// TODO: PEGAR USER ID DPS QUE TIVER LOGANDO
+					id: 'id',//payload.user.id,
+					title:'' ,//payload.user.displayName,
+					date: '',//payload.timestamp,
+					image:'' ,//payload.user.photoURL,
 				},
 				video: "",
 				sharedImg: "",
@@ -128,15 +133,20 @@ export function getArticlesAPI() {
 		dispatch(setLoading(true));
 		let payload;
 		let id;
-	
-		dispatch(getArticles('payload', 'id'));
-
+		collection(db,"articles")
+		// TODO -> VER ISSO AQUI QUE N TA INDO
+			// .orderBy("actor.date", "desc")
+			// .onSnapshot((snapshot) => {
+			// 	payload = snapshot.docs.map((doc) => doc.data());
+			// 	id = snapshot.docs.map((doc) => doc.id);
+			// 	dispatch(getArticles(payload, id));
+			// });
 		dispatch(setLoading(false));
 	};
 }
 
 export function updateArticleAPI(payload) {
 	return (dispatch) => {
-		db.collection("articles").doc(payload.id).update(payload.update);
+		collection(db,"articles").doc(payload.id).update(payload.update);
 	};
 }

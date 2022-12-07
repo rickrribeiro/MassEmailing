@@ -1,5 +1,5 @@
-import "./styles/main.css";
 import React, { useState, useEffect } from "react";
+import "./styles/main.css";
 import {
   HomePage,
   SearchPage,
@@ -9,12 +9,15 @@ import {
   CityPage,
 } from "./pages";
 
+// import * as dotenv from 'dotenv'
+// dotenv.config()
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import Store from "./store";
+
 
 interface City {
   id: string;
