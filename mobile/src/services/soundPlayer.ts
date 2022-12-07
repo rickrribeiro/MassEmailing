@@ -1,7 +1,7 @@
 import { Audio } from 'expo-av';
 
 let sound;
-const start = async () => {
+export default async () => {
 
     const audio = await Audio.Sound.createAsync( require('../assets/audio/bg-audio.mp3')
     );
@@ -13,4 +13,3 @@ const start = async () => {
     console.log("terminou")
 };
 
-module.exports = start
