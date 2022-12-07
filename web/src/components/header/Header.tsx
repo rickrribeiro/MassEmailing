@@ -6,7 +6,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
-function Header() {
+function Header(props) {
   return (
     <div className="header">
       <div className="header__left">
@@ -23,13 +23,21 @@ function Header() {
       </div>
 
       <div className="header__right">
-        <p>Become a member</p>
+      {!props.user &&  <Link to="/login"><p>Become a member / Login</p></Link>}
+       
         <LanguageIcon />
-        <ExpandMoreIcon />
-        <Avatar />
+        {props.user &&  <img id="profileimage" src={props.user.photoURL} />}
+        
+        
       </div>
     </div>
   );
 }
+import { connect } from "react-redux";
+const mapStateToProps = (state) => {
+	return {
+		user: state.userState?.user,
+	};
+};
 
-export default Header;
+export default connect(mapStateToProps)(Header);

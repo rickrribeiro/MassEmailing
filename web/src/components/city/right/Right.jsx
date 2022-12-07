@@ -137,4 +137,12 @@ function Right() {
 	);
 }
 
-export default Right;
+
+import { connect } from "react-redux";
+const mapStateToProps = (state) => {
+	return {
+		user: state.userState?.user,
+	};
+};
+
+export default connect(mapStateToProps)(Right);

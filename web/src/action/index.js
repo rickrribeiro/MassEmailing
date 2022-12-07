@@ -81,10 +81,10 @@ export function postArticleAPI(payload) {
 					addDoc(collection(db,"articles"),{
 						actor: {
 							// TODO: PEGAR USER ID DPS QUE TIVER LOGANDO
-							id: 'id',//payload.user.id,
-							title:'' ,//payload.user.displayName,
-							date: '',//payload.timestamp,
-							image:'' ,//payload.user.photoURL,
+							id: payload.user.email,
+							title:payload.user.displayName,
+							date: '07/12/2022',
+							image:payload.user.photoURL,
 						},
 						video: payload.video,
 						sharedImg: downloadURL,
@@ -94,6 +94,7 @@ export function postArticleAPI(payload) {
 						},
 						comments: 0,
 						description: payload.description,
+						contact: payload.contact
 					});
 					dispatch(setLoading(false));
 				}
@@ -103,10 +104,10 @@ export function postArticleAPI(payload) {
 			addDoc(collection(db,"articles"),{
 				actor: {
 					// TODO: PEGAR USER ID DPS QUE TIVER LOGANDO
-					id: 'id',//payload.user.id,
-					title:'' ,//payload.user.displayName,
-					date: '',//payload.timestamp,
-					image:'' ,//payload.user.photoURL,
+					id: payload.user.email,
+					title:payload.user.displayName,
+					date: '07/12/2022',
+					image:payload.user.photoURL,
 				},
 				video: payload.video,
 				sharedImg: "",
@@ -116,6 +117,7 @@ export function postArticleAPI(payload) {
 				},
 				comments: 0,
 				description: payload.description,
+				contact: payload.contact
 			});
 			dispatch(setLoading(false));
 		} else if (payload.image === "" && payload.video === "") {
@@ -123,10 +125,10 @@ export function postArticleAPI(payload) {
 			addDoc(collection(db,"articles"), {
 				actor: {
 					// TODO: PEGAR USER ID DPS QUE TIVER LOGANDO
-					id: 'id',//payload.user.id,
-					title:'' ,//payload.user.displayName,
-					date: '',//payload.timestamp,
-					image:'' ,//payload.user.photoURL,
+					id: payload.user.email,
+					title:payload.user.displayName,
+					date: '07/12/2022',
+					image:payload.user.photoURL,
 				},
 				video: "",
 				sharedImg: "",
@@ -136,6 +138,7 @@ export function postArticleAPI(payload) {
 				},
 				comments: 0,
 				description: payload.description,
+				contact: payload.contact
 			});
 			dispatch(setLoading(false));
 		}

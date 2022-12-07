@@ -231,13 +231,13 @@ function Main(props) {
 	let articles = [
 		{
 			actor: {
-				title: "Kid Bengala",
-				description: "Ator Porno @ BR",
+				title: "Neymar",
+				description: "Jogador @ BR",
 				date: "06/12/2022",
-				image:"https://d1x4bjge7r9nas.cloudfront.net/wp-content/uploads/2022/08/18112241/Kid-Bengala.jpg"
+				image:"https://images.ctfassets.net/3mv54pzvptwz/5eTv6hTyA1pqkFClYRn0qt/be626a573cbf1ee7e421b73f87ed6851/20221205_foto_GETTY_neymar_jr_jogo_brasil_x_coreia_copa_do_mundo__209_.jpg"
 			},
 			comments: 10,
-			description: "Bom dia",
+			description: "Contato para turismo em bali: João Turismo",
 			likes: {
 				count: 22,
 				whoLiked: {
@@ -246,14 +246,14 @@ function Main(props) {
 			},
 		},{
 			actor: {
-				title: "Kid Bengala",
-				description: "Ator Porno @ BR",
+				title: "Neymar",
+				description: "Jogador @ BR",
 				date: "06/12/2022",
-				image:"https://d1x4bjge7r9nas.cloudfront.net/wp-content/uploads/2022/08/18112241/Kid-Bengala.jpg"
+				image:"https://images.ctfassets.net/3mv54pzvptwz/5eTv6hTyA1pqkFClYRn0qt/be626a573cbf1ee7e421b73f87ed6851/20221205_foto_GETTY_neymar_jr_jogo_brasil_x_coreia_copa_do_mundo__209_.jpg"
 			},
 			comments: 10,
-			description: "Vote em mim para meter o pau em brasilia!",
-			sharedImg:"https://www.radiocacula.com.br/wp-content/uploads/media/images/2546/18930//53bad8dd0f0fa56831f0142e9012dbe3241f5d39e657e.jpg",
+			description: "Contato do melhor coworking de bali",
+			sharedImg:"https://thesmartlocal.com/indonesia/wp-content/uploads/2021/05/bali-coworking-spaces-biliq-pool.jpg",
 			likes: {
 				count: 33,
 				whoLiked: {
@@ -264,13 +264,13 @@ function Main(props) {
 		
 		{
 			actor: {
-				title: "Kid Bengala",
-				description: "Ator Porno @ BR",
+				title: "Neymar",
+				description: "Jogador @ BR",
 				date: "06/12/2022",
-				image:"https://d1x4bjge7r9nas.cloudfront.net/wp-content/uploads/2022/08/18112241/Kid-Bengala.jpg"
+				image:"https://images.ctfassets.net/3mv54pzvptwz/5eTv6hTyA1pqkFClYRn0qt/be626a573cbf1ee7e421b73f87ed6851/20221205_foto_GETTY_neymar_jr_jogo_brasil_x_coreia_copa_do_mundo__209_.jpg"
 			},
 			comments: 10,
-			description: "PCC - Pau no Cu de Curioso",
+			description: "Contato para aluguel de motos em bali",
 			likes: {
 				count: 10,
 				whoLiked: {
@@ -313,8 +313,8 @@ function Main(props) {
 		<Container>
 			<ShareBox>
 				<div>
-					{/* {props.user.photoURL ? <img src={props.user.photoURL} alt="" /> : <img src="/images/user.svg" alt="" />}TODO QND TIVER AUTH */}
-					<img src="/images/user.svg" alt="" />
+					{props.user.photoURL ? <img src={props.user.photoURL} alt="" /> : <img src="/images/user.svg" alt="" />}
+					{/* <img src="/images/user.svg" alt="" /> */}
 					<button onClick={clickHandler} disabled={props.loading ? true : false}>
 						Share a recommendation
 					</button>
@@ -330,11 +330,11 @@ function Main(props) {
 					</button>
 					<button>
 						<img src="/images/event-icon.svg" alt="" />
-						<span>Event</span>
+						<span>Organize a event</span>
 					</button>
 					<button>
 						<img src="/images/article-icon.svg" alt="" />
-						<span>Write article</span>
+						<span>Share a contact</span>
 					</button>
 				</div>
 			</ShareBox>
@@ -391,12 +391,8 @@ function Main(props) {
 								<span>Comment</span>
 							</button>
 							<button>
-								<img src="/images/share-icon.svg" alt="" />
-								<span>Share</span>
-							</button>
-							<button>
 								<img src="/images/send-icon.svg" alt="" />
-								<span>Send</span>
+								<span>Get Contact</span>
 							</button>
 						</SocialActions>
 					</Article>

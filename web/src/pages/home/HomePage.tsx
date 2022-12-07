@@ -28,26 +28,30 @@ function HomePage(props) {
 
     <div className='home__section'>
     <Card
+        city="bali"
         id=""
         src="https://miro.medium.com/max/1200/1*buAlXkwPmNAOOG23fX6rFw.jpeg"
-        title="Online Experiences"
-        description="Unique activities we can do together, led by a world of hosts."
+        title="Coworking places in Bali"
+        description="Unique coworking to do networking."
     />
     <Card
+        city="bali"
         id=""
         src="https://a0.muscache.com/im/pictures/15159c9c-9cf1-400e-b809-4e13f286fa38.jpg?im_w=720"
-        title="Unique stays"
+        title="Unique stays in Norway"
         description="Spaces that are more than just a place to sleep."
     />
     <Card
+        city="bali"
         id=""
         src="https://s3.ap-southeast-2.amazonaws.com/thebalibible.com/uploads/images/venue/3ed6fe7dcce119e06367be48873b13ed.jpg?v=1"
-        title="Entire homes"
-        description="Comfortable private places, with room for friends or family."
+        title="Clubs in Bali"
+        description="Nice clubs to go with  friends or family."
     />
     </div>
     <div className='home__section'>
     <Card
+        city="bali"
         id=""
         src="https://media.nomadicmatt.com/2019/airbnb_breakup3.jpg"
         title="3 Bedroom Flat in Bournemouth"
@@ -55,6 +59,7 @@ function HomePage(props) {
         price={130}
     />
     <Card
+        city="bali"
         id=""
         src="https://thespaces.com/wp-content/uploads/2017/08/Courtesy-of-Airbnb.jpg"
         title="Penthouse in London"
@@ -62,6 +67,7 @@ function HomePage(props) {
         price={350}
     />
     <Card
+        city="bali"
         id=""
         src="https://media.nomadicmatt.com/2018/apartment.jpg"
         title="1 Bedroom apartment"

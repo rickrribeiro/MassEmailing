@@ -46,6 +46,12 @@ input:focus {outline:none!important;}
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 15vw;
-    margin-right: 80px;
+    width: 8vw;
+    margin-right: 40px;
+}
+
+
+#profileimage {
+    border-radius: 999px;
+    height: 60px;
 }

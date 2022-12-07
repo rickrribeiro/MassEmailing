@@ -227,10 +227,9 @@ function PostalModal(props) {
 						</Header>
 						<SharedContent>
 							<UserInfo>
-							<img src="/images/user.svg" alt="" />
-							<span>Name</span>
-								{/* {props.user.photoURL ? <img src={props.user.photoURL} alt="" /> : <img src="/images/user.svg" alt="" />} TODO QND TIVER BACK*/}
-								{/* <span>{props.user.displayName ? props.user.displayName : "Name"}</span> */}
+					
+								{props.user.photoURL ? <img src={props.user.photoURL} alt="" /> : <img src="/images/user.svg" alt="" />}
+								<span>{props.user.displayName ? props.user.displayName : "Name"}</span>
 							</UserInfo>
 							<Editor>
 								<textarea value={editorText} onChange={(event) => setEditorText(event.target.value)} placeholder="Do you wanna do a recommendation?" autoFocus={true} />
@@ -271,10 +270,7 @@ function PostalModal(props) {
 								</AssetButton>
 							</AttachAsset>
 							<ShareComment>
-								<AssetButton>
-									<img src="/images/share-comment.svg" alt="" />
-									<span>Anyone</span>
-								</AssetButton>
+								
 							</ShareComment>
 							<PostButton disabled={!editorText ? true : false} onClick={(event) => postArticle(event)}>
 								Post

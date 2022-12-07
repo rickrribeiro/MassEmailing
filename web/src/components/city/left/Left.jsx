@@ -6,6 +6,8 @@ const Container = styled.div`
 	grid-area: left;
 `;
 
+import { Link } from "react-router-dom";
+
 const ArtCard = styled.div`
 	text-align: center;
 	overflow: hidden;
@@ -138,16 +140,22 @@ function Left(props) {
 			</ArtCard>
 			<CommunityCard>
 				<a>
+				<Link to="/asddsadsadsa">
 					<span>Bangkok</span>
+				</Link>
 				</a>
 				<a>
 					<span>
+					<Link to="/asddsadsadas">
 						London
+					</Link>
 						<img src="/images/plus-icon.svg" alt="" />
 					</span>
 				</a>
 				<a>
+				<Link to="/asddsadsa">
 					<span>Beijing</span>
+				</Link>
 				</a>
 				<a>
 					<span>Discover Hot Cities 🔥</span>

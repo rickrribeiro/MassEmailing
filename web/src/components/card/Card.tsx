@@ -9,9 +9,7 @@ interface RecommendationProps {
     src : string;
     description: string;
     price?: number;
-    city:{
-        name: string;
-    }
+    city: string
   }
 
 function Card(props: RecommendationProps) {
@@ -20,12 +18,12 @@ function Card(props: RecommendationProps) {
 
     return (
         <div className='card'>
-            <img src={props.src} alt="" />
+            <img src={props.src} alt="" id ="immmmm"/>
             <div className="card__info">
                 <h2>{props.title}</h2>
                 <h4>{props.description}</h4>
                
-                <Button onClick={() =>navigate.push(`/city/${props.city.name}`)} variant='outlined'>Explore city</Button>
+                <Button onClick={() =>navigate.push(`/city/${props.city}`)} variant='outlined'>Explore city</Button>
   
             </div>
         </div>
